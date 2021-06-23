@@ -12,32 +12,45 @@ Adolescent and young adult (AYA) cancers represent a small proportion of overall
 -  Existing disparities research may mask similarities or differences that uniquely impact this patient population.
 
 ### Proposed Analysis
+Our proposed analysis are two-fold. 
 #### 	Research Objective(s):
-1. 	Describe top 10 most common AYA cancers
+ 1. 	Describe top 10 most common AYA cancers
  ## By age group (0-39 years old)
-o   By sex
-o   By race
-o   By SES (County-level employment, income, poverty)
-o   By:
-   §  Stage at diagnosis, tumor grade, tumor size (each as applicable)
-   §  First course of treatment
-·   	Lag time dx to first course of treatment
-·   	What treatment was given
-§  ?Measure of disease burden at diagnosis
-§  ?Path to diagnosis
-§  Mortality
-o    
-2. 	Describe changes in the above between 1988 – 2018
-o   Impact of key milestones:
-§  ACA (2014)
-§  Cervical Cancer vaccine (2006)
+-   By sex
+-   By race
+-   By SES (County-level employment, income, poverty)
+-   By:
+    -  Stage at diagnosis, tumor grade, tumor size (each as applicable)
+   -  First course of treatment
+-   	Lag time dx to first course of treatment
+-   	What treatment was given
+-  ?Measure of disease burden at diagnosis
+-  ?Path to diagnosis
+-  Mortality
+    
+2. 	Describe changes in the above between 1997-2016. 
+ -  Investigate the impact of key milestones:
+    -  ACA (2014)
+    -  Cervical Cancer vaccine (2006)
  
-·   	Methods:
-·   	Observational study using descriptive statistics
-·   	Databases (accessed/analyzed using SEER*Stat Software)
-§  SEER Incidence Data, 1975-2018; US Mortality Data NCHS, 1969-2018; US Population Data, 1969-2018
+### Methods 
+-   	Observational study using descriptive statistics
+-   	Databases (accessed/analyzed using SEER*Stat Software)
 
-### VARIABLES
+Our data will come from SEER Incidence Data, 1975-2018; US Mortality Data NCHS, 1969-2018; US Population Data, 1969-2018
+
+####  VARIABLES
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+### RESULTS 
+
+- Tables 
+- Data visualizations 
 
 #### REFERENCES
 
