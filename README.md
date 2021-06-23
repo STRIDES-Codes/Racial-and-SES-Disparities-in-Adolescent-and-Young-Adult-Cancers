@@ -12,8 +12,11 @@ Adolescent and young adult (AYA) cancers represent a small proportion of overall
 -  Existing disparities research may mask similarities or differences that uniquely impact this patient population.
 
 ### Proposed Analysis
+
 Our proposed analysis are two-fold. 
+
 #### 	Research Objective(s):
+
  1. 	Describe top 10 most common AYA cancers
  ## By age group (0-39 years old)
 -   By sex
@@ -34,6 +37,7 @@ Our proposed analysis are two-fold.
     -  Cervical Cancer vaccine (2006)
  
 ### Methods 
+
 -   	Observational study using descriptive statistics
 -   	Databases (accessed/analyzed using SEER*Stat Software)
 
