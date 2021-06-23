@@ -37,7 +37,7 @@ Our proposed analysis are two-fold.
 -   	Observational study using descriptive statistics
 -   	Databases (accessed/analyzed using SEER*Stat Software)
 
-Our data will come from SEER Incidence Data, 1975-2018; US Mortality Data NCHS, 1969-2018; US Population Data, 1969-2018
+Our data will come from SEER Incidence Data, 1975-2018; US Mortality Data NCHS, 1969-2018; US Population Data, 1969-2018 (** to verify) 
 
 ####  VARIABLES
 
