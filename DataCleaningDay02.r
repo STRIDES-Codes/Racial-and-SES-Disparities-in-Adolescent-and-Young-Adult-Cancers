@@ -32,3 +32,25 @@ names(SEER_Data)[names(SEER_Data) == 'Survival.months.new'] <- 'Survival.months'
 names(SEER_Data)[names(SEER_Data) == 'Radiation.code.new'] <- 'Radiation.recode'
 
 write.csv(SEER_Data, "scratch/codeathon_RECODE.csv")
+
+### UPDATES ### 
+
+## ("scratch/codeathon_RECODE_Day3_v02.csv") --> v01 is the same as v02 but I had to re-run it as I don't have permision to re-write the v01. 
+SEER_Cleaned <- read_csv("scratch/codeathon_RECODE_Day3_v02.csv")
+SEER_Cleaned_updated <- SEER_Cleaned
+#SEER_Cleaned_updated<- SEER_Cleaned[!SEER_Cleaned$X....High.school.education.ACS.2013.2017=="Blank(s)",]
+#SEER_Cleaned_updated<- SEER_Cleaned_updated[SEER_Cleaned_updated$Age.recode.with..1.year.olds %in% c("35-39 years", "25-29 years", "30-34 years", "20-24 years", "15-19 years"),]
+SEER_Cleaned_updated$X..Unemployed.ACS.2013.2017 <- as.double(SEER_Cleaned_updated$X..Unemployed.ACS.2013.2017)/100
+SEER_Cleaned_updated$X....High.school.education.ACS.2013.2017<-as.double(SEER_Cleaned$X....High.school.education.ACS.2013.2017)/100
+
+## NEW VARIABLES 
+SEER_Cleaned_updated<- SEER_Cleaned_updated %>% mutate(HighSchoolEdCat = cut(X....High.school.education.ACS.2013.2017, breaks = c(0,10,20,30, 100)),
+                                                       Unemployed_cat = cut(X..Unemployed.ACS.2013.2017, breaks = c(0,5,10,15, 100)),
+                                                       median_income_household_group = ntile(Median.household.income..in.tens..ACS.2013.2017 , 4))  
+
+
+# AGE GROUP COUNTS 
+#SEER_Cleaned_updated %>% group_by(Decade,Age.recode.with..1.year.olds) %>% summarize(count=n()) %>% mutate(freq = count/sum(count)) 
+write.csv(SEER_Cleaned_updated, "scratch/codeathon_RECODE_v03.csv")
+
+
