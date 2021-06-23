@@ -6,8 +6,8 @@
 
 - Cancer is the most frequent cause of disease related death among adolescents and young adults (AYA) 15-39 years of age at diagnosis. [2]
 Adolescent and young adult (AYA) cancers represent a small proportion of overall cancer cases, and overall survival rates remain high in many developed countries. However, AYA cancers may be more likely to be diagnosed at a later stage because of delays in diagnosis due to the infrequency of disease in younger patients, as well as the larger proportion of younger Americans (compared to older Americans) who are under- or uninsured.[1]
-- Relative youth is associated with lack of immunosenescence, lack of polypharmacy and/or consequences of adverse events, which may suggest increased ability to tolerate and therefore benefit from targeted immunotherapy in AYA cancer patients.
 
+- Relative youth is associated with lack of immunosenescence, lack of polypharmacy and/or consequences of adverse events, which may suggest increased ability to tolerate and therefore benefit from targeted immunotherapy in AYA cancer patients.
 
 -  Existing disparities research may mask similarities or differences that uniquely impact this patient population.
 
