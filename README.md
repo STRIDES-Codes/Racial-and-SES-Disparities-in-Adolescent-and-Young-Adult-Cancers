@@ -44,7 +44,7 @@ Our proposed analysis are two-fold.
 -   	Observational study using descriptive statistics
 -   	Databases (accessed/analyzed using SEER*Stat Software)
 
-Our data will come from SEER Incidence Data, between the years of 1997 - 2016.  
+Our data will come from SEER Incidence Data, between the years of 1997 - 2016. More specifically, data from the Surveillance, Epidemiology, and End Results (SEER-18) Program (November 2018 submission) of the National Cancer Institute were used for this analysis. SEER 18 covers approximately 28% of the US population (based on the 2010 census), with data from cancer registries in California, Connecticut, Michigan, Hawaii, Iowa, New Mexico, Washington, Utah, Georgia, Alaska, Kentucky, Louisiana, and New Jersey. 
 
 ####  VARIABLES
 
