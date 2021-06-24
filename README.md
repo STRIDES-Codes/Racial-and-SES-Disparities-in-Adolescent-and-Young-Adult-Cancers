@@ -54,7 +54,10 @@ Our data will come from SEER Incidence Data, 1975-2018; US Mortality Data NCHS, 
 ### RESULTS 
 
 - Tables 
+
 - Data visualizations 
+
+![Cancers_Top_10](https://user-images.githubusercontent.com/22613114/123296338-8e4d6180-d4e4-11eb-9043-326c54d425f8.png)
 
 #### REFERENCES
 
