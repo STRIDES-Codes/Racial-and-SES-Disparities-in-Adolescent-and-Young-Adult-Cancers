@@ -17,7 +17,8 @@ Our proposed analysis are two-fold.
 
 #### 	Research Objective(s):
 
- 1. 	Describe top 10 most common AYA cancers
+ Describe top 10 most common AYA cancers and Explore any disparities that may exist in AYA cancers. 
+ 
  ## By age group (0-39 years old)
 -   By sex
 -   By race
