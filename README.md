@@ -23,8 +23,10 @@ Our proposed analysis are two-fold.
 -   By race
 -   By SES (County-level employment, income, poverty)
 -   By:
-    -  Stage at diagnosis, tumor grade, tumor size (each as applicable)
+
+   -  Stage at diagnosis, tumor grade, tumor size (each as applicable)
    -  First course of treatment
+  
 -   	Lag time dx to first course of treatment
 -   	What treatment was given
 -  ?Measure of disease burden at diagnosis
@@ -58,6 +60,7 @@ Our data will come from SEER Incidence Data, 1975-2018; US Mortality Data NCHS, 
 - Data visualizations 
 
 ![Cancers_Top_10](https://user-images.githubusercontent.com/22613114/123296338-8e4d6180-d4e4-11eb-9043-326c54d425f8.png)
+![Cancer_Counts_by_State_Level](https://user-images.githubusercontent.com/22613114/123296340-8e4d6180-d4e4-11eb-8923-fce27f2343d2.png)
 
 #### REFERENCES
 
