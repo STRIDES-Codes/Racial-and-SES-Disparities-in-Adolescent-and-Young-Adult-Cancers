@@ -43,26 +43,18 @@ Our proposed analysis are two-fold.
 -   	Observational study using descriptive statistics
 -   	Databases (accessed/analyzed using SEER*Stat Software)
 
-Our data will come from SEER Incidence Data, 1975-2018; US Mortality Data NCHS, 1969-2018; US Population Data, 1969-2018 (** to verify) 
+Our data will come from SEER Incidence Data, between the years of 1997 - 2016.  
 
 ####  VARIABLES
 
-
-
-| Cancer Type      |           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-
+From the SEER Data bet
 
 ### RESULTS 
 
 - Tables 
-
-
-| Acute Lymphocytic Leukemia | 8,024  | 4.35% | 10,457  | 4.43%  | 18,481 |
+|Cancer Type                 |1997-2006 (N)|1997-2006 (%) | 2007-2016 (N)| 2007-2016 (%)| Total |
+| -------------------------- |:------------|:-------------|:-------------|:-------------|:------|
+| Acute Lymphocytic Leukemia | 8,024       | 4.35%        | 10,457       | 4.43%        | 18,481|
 
 | Brain                      | 10,911 | 5.91% | 13,178  | 5.59%  | 24,089 |
 | Breast                     | 24,877 | 13.48% | 29,362 | 12.45% | 54,239 |
