@@ -41,10 +41,9 @@ Our proposed analysis are two-fold.
  
 ### Methods 
 
--   	Observational study using descriptive statistics
+We will be mainly using descriptive statistics and data visualizations to investigate disparities among different types of cancers. 
 
--   	Databases (accessed/analyzed using SEER*Stat Software)
-
+#### DATA 
 Our data will come from SEER Incidence Data, between the years of 1997 - 2016. More specifically, data from the Surveillance, Epidemiology, and End Results (SEER-18) Program (November 2018 submission) of the National Cancer Institute were used for this analysis. SEER 18 covers approximately 28% of the US population (based on the 2010 census), with data from cancer registries in California, Connecticut, Michigan, Hawaii, Iowa, New Mexico, Washington, Utah, Georgia, Alaska, Kentucky, Louisiana, and New Jersey. 
 
 ####  VARIABLES
