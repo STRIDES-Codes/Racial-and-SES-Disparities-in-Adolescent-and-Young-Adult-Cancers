@@ -1,6 +1,5 @@
 ---
 title: "AYA_Codeathon_Visualization_Day4_v0.2"
-author: "Faith Lee and Lesley Chapman"
 output: pdf_document
 ---
 
