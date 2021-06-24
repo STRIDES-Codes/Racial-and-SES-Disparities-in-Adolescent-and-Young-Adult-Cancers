@@ -1,5 +1,6 @@
 ---
 title: "AYA_Codeathon_Visualization_Day4_v0.2"
+author: "Faith Lee and Lesley Chapman"
 output: pdf_document
 ---
 
@@ -81,18 +82,20 @@ ggplot(SEER_Cleaned_updated, aes(x=Survival.months, color=Sex)) +
 #   scale_fill_continuous(low = "white", high = "red", name = "Cancer Counts \n 1997-2016 in 13 States")
 ```
 
-```{r}
-er <-  SEER_Cleaned_updated %>% distinct(Survival.months.flag)
-er$Survival.months.flag
-```
-
 ### Note: Survival.months.flag is currently coded as 1 not 'complete'
 **1997 to 2006**
 ```{r}
 SEER_1997_2006 <- SEER_Cleaned_updated %>%
-  filter(Year.of.diagnosis >= 1997 | Year.of.diagnosis <= 2006) %>%
+  filter(Year.of.diagnosis >= 1997 & Year.of.diagnosis <= 2006) %>%
   filter(Survival.months > 0)
 ```
+
+```{r}
+er <-  SEER_1997_2006 %>% distinct(Year.of.diagnosis)
+er$Year.of.diagnosis
+```
+
+
 
 ```{r}
 ggplot(SEER_1997_2006, aes(x=Survival.months, color=Unemployed_cat)) +
@@ -103,6 +106,9 @@ ggplot(SEER_1997_2006, aes(x=Survival.months, color=Unemployed_cat)) +
   theme_bw() +
   guides(col=guide_legend("Employment_Status"))
 ```
+
+
+
 ```{r}
 ggplot(SEER_1997_2006, aes(x=Survival.months, color=Rural.Urban.Continuum.Code.2013)) +
   geom_histogram(fill="white", alpha=0.5, position="identity") + 
@@ -125,8 +131,15 @@ ggplot(SEER_1997_2006, aes(x=Survival.months, color=HighSchoolEdCat)) +
 **2007-2016**
 ```{r}
 SEER_2007_2016 <- SEER_Cleaned_updated %>%
-  filter(Year.of.diagnosis >= 2007 | Year.of.diagnosis <= 2016) %>%
+  filter(Year.of.diagnosis >= 2007  & Year.of.diagnosis <= 2016) %>%
   filter(Survival.months > 0)
+```
+
+
+
+```{r}
+er <-  SEER_2007_2016 %>% distinct(Year.of.diagnosis)
+er$Year.of.diagnosis
 ```
 
 ```{r}
@@ -217,3 +230,7 @@ SEER_Cleaned_updated %>%
   filter(Survival.months.flag==1) %>% 
   summarize(median(Survival.months, na.rm=TRUE))
 ```
+
+
+
+       
