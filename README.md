@@ -79,6 +79,8 @@ Top 10 cancer counts by decades:
 - Data visualizations 
 1. Top 10 Cancers: each year. 
 ![Cancers_Top_10](https://user-images.githubusercontent.com/22613114/123296338-8e4d6180-d4e4-11eb-9043-326c54d425f8.png)
+
+WHERE THE SEER DATA COMES FROM GEOGRAPHICALLY
 ![Cancer_Counts_by_State_Level](https://user-images.githubusercontent.com/22613114/123296340-8e4d6180-d4e4-11eb-8923-fce27f2343d2.png)
 
 #### REFERENCES
