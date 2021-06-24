@@ -27,16 +27,16 @@ Our proposed analysis are two-fold.
    -  Stage at diagnosis, tumor grade, tumor size (each as applicable)
    -  First course of treatment
   
--   	Lag time dx to first course of treatment
--   	What treatment was given
+-   Lag time dx to first course of treatment
+-   What treatment was given
 -  ?Measure of disease burden at diagnosis
 -  ?Path to diagnosis
 -  Mortality
     
 2. 	Describe changes in the above between 1997-2016. 
- -  Investigate the impact of key milestones:
-    -  ACA (2014)
-    -  Cervical Cancer vaccine (2006)
+ 	-  Investigate the impact of key milestones:
+    		-  ACA (2014)
+    		-  Cervical Cancer vaccine (2006)
  
 ### Methods 
 
@@ -58,18 +58,19 @@ Our data will come from SEER Incidence Data, 1975-2018; US Mortality Data NCHS, 
 	Year Category				
 	1997 - 2006		2007 - 2016		Total
 	N	%	N	%	
-Acute Lymphocytic Leukemia	8,024	4.35%	10,457	4.43%	18,481
-Brain	10,911	5.91%	13,178	5.59%	24,089
-Breast	24,877	13.48%	29,362	12.45%	54,239
-Cervix	8,543	4.63%	8,836	3.75%	17,379
-Colorectal	7,220	3.91%	9,791	4.15%	17,011
-Hodgkin's Lymphoma	9,890	5.36%	11,594	4.92%	21,484
-Melanoma	18,451	10.00%	19,999	8.48%	38,450
-Non-Hodgkin's Lymphoma	11,548	6.26%	13,694	5.81%	25,242
-Testis	12,661	6.86%	17,117	7.26%	29,778
-Thyroid	17,883	9.69%	32,277	13.69%	50,160
-All else	54,557	29.56%	69,516	29.48%	124,073
-Totals	184,565	100.00%	235,821	100.00%	420,386
+	Acute Lymphocytic Leukemia	8,024	4.35%	10,457	4.43%	18,481
+	Brain	10,911	5.91%	13,178	5.59%	24,089
+	Breast	24,877	13.48%	29,362	12.45%	54,239
+		Cervix	8,543	4.63%	8,836	3.75%	17,379
+	Colorectal	7,220	3.91%	9,791	4.15%	17,011
+	Hodgkin's Lymphoma	9,890	5.36%	11,594	4.92%	21,484
+	Melanoma	18,451	10.00%	19,999	8.48%	38,450
+	Non-Hodgkin's Lymphoma	11,548	6.26%	13,694	5.81%	25,242
+	Testis	12,661	6.86%	17,117	7.26%	29,778
+	Thyroid	17,883	9.69%	32,277	13.69%	50,160
+	All else	54,557	29.56%	69,516	29.48%	124,073
+	Totals	184,565	100.00%	235,821	100.00%	420,386
+
 ### RESULTS 
 
 - Tables 
