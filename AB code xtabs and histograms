@@ -1,0 +1,138 @@
+install.packages("diplyr")
+gendertable <- table(codeathon1$Sex)
+gendertable
+
+dxtable <- table(codeathon1$`Site recode ICD-O-3/WHO 2008`)
+dxtable
+
+dxtable2 <- sort(dxtable,decreasing=T)
+dxtable2
+
+dxtableB <- table(codeathon1$`Site recode B ICD-O-3/WHO 2008`)
+dxtableB
+
+dxtableB2 <- sort(dxtableB,decreasing=T)
+dxtableB2
+
+ruraltable2 <- table(codeathon_RECODE$Rural.Urban.Continuum.Code.2013)
+ruraltable2
+
+
+install.packages("tidyr")
+install.packages("dplyr")
+
+library(dplyr)
+mutate(codeathon_RECODE$Year.of.diagnosis, Year.Recode = ifelse(codeathon_RECODE$Year.of.diagnosis > '1996', "2007 to 2016", "1997 to 2006"))
+
+codeathon_RECODE$Year.of.diagnosis[codeathon_RECODE$Year.of.diagnosis< 2007] <- "1997 to 2006"
+codeathon_RECODE$Year.of.diagnosis[codeathon_RECODE$Year.of.diagnosis>=2006] <- "2007 to 2016"
+
+year <- table(codeathon_RECODE$Year.of.diagnosis)
+year
+
+table1 <- table(codeathon_RECODE$Year.of.diagnosis, codeathon_RECODE$Sex, codeathon_RECODE$Age.recode.with..1.year.olds)
+table1
+
+table2 <- table(codeathon_RECODE$Year.of.diagnosis, codeathon_RECODE$Age.recode.with..1.year.olds, codeathon_RECODE$Site.recode.ICD.O.3.WHO.2008)
+table2
+
+library(stats)
+table_xtabs <- xtabs(~Site.recode.ICD.O.3.WHO.2008+Year.of.diagnosis+Age.recode.with..1.year.olds, data=codeathon_RECODE)
+
+table_xtabs
+
+library(stats)
+table_xtabs2 <- xtabs(~Site.recode.ICD.O.3.WHO.2008+Age.recode.with..1.year.olds, data=codeathon_RECODE)
+table_xtabs2
+
+library(stats)
+table_xtabs3 <- xtabs(~Site.recode.ICD.O.3.WHO.2008+Year.of.diagnosis, data=codeathon_RECODE)
+table_xtabs3
+
+dx <- table(codeathon_RECODE$Race.and.origin.recode..NHW..NHB..NHAIAN..NHAPI..Hispanic.)
+dx
+
+library(stats)
+table_xtabs4 <- xtabs(~Site.recode.ICD.O.3.WHO.2008+Race.and.origin.recode..NHW..NHB..NHAIAN..NHAPI..Hispanic., data=codeathon_RECODE)
+table_xtabs4
+
+
+ls()
+ls(codeathon_RECODE)
+
+codeathon.AB <- codeathon_RECODE
+
+codeathon.AB$Year.of.diagnosis[codeathon.AB$Year.of.Diagnosis< 2007] <- "1997 to 2006"
+codeathon.AB$Year.of.diagnosis[codeathon.AB$Year.of.diagnosis>=2006] <- "2007 to 2016"
+
+year1 <- table (codeathon.AB$Year.of.diagnosis)
+year1
+
+library(stats)
+table_xtabs.race <- xtabs(~Year.of.diagnosis+Race.and.origin.recode..NHW..NHB..NHAIAN..NHAPI..Hispanic., data=codeathon.AB)
+table_xtabs.race
+
+library(stats)
+table_xtabs.sex <- xtabs(~Year.of.diagnosis+Sex, data=codeathon.AB)
+table_xtabs.sex
+
+library(stats)
+table_xtabs.age <- xtabs(~Year.of.diagnosis+Age.recode.with..1.year.olds, data=codeathon.AB)
+table_xtabs.age 
+
+codeathon.AB2 <- codeathon_RECODE_Day3_v02
+
+codeathon.AB2$Year.of.diagnosis[codeathon.AB2$Year.of.diagnosis< 2007] <- "1997 to 2006"
+codeathon.AB2$Year.of.diagnosis[codeathon.AB2$Year.of.diagnosis>2006] <- "2007 to 2016"
+
+library(stats)
+table_xtabs.rural <- xtabs(~Year.of.diagnosis+Rural.Urban.Continuum.Code.2013, data=codeathon.AB2)
+table_xtabs.rural 
+
+library(stats)
+table_xtabs.vital <- xtabs(~Site.recode.ICD.O.3.WHO.2008+Year.of.diagnosis+Vital.status.recode..study.cutoff.used., data=codeathon.AB2)
+table_xtabs.vital 
+
+library(dplyr)
+codeathon_RECODE_v03 %>% filter(Survival.months.flag==1) %>% summarize(median(Survival.months, na.rm=TRUE))
+
+
+codeathon.ABday4 <- codeathon_RECODE_v03
+
+codeathon.ABday4$Year.of.diagnosis[codeathon.ABday4$Year.of.diagnosis<2007] <- "1997 to 2006"
+codeathon.ABday4$Year.of.diagnosis[codeathon.ABday4$Year.of.diagnosis>2006] <- "2007 to 2016"
+
+
+library(stats)
+table_xtabs.ed <- xtabs(~HighSchoolEdCat+Year.of.diagnosis, data=codeathon.ABday4)
+table_xtabs.ed 
+
+library(stats)
+table_xtabs.ed <- xtabs(~Unemployed_cat+Year.of.diagnosis, data=codeathon.ABday4)
+table_xtabs.ed 
+
+library(stats)
+table_xtabs.ed <- xtabs(~median_income_household_group+Year.of.diagnosis, data=codeathon.ABday4)
+table_xtabs.ed 
+
+library(stats)
+table_xtabs.ed <- xtabs(~Insurance.Recode..2007..+Year.of.diagnosis, data=codeathon.ABday4)
+table_xtabs.ed 
+
+install.packages("ggplot2")
+
+library(ggplot2)
+ggplot(codeathon.ABday4, aes(x = Survival.months)) +
+  geom_histogram(aes(color = Year.of.diagnosis, fill = Year.of.diagnosis), 
+                 position = "identity", bins = 30, alpha = 0.4) +
+  scale_color_manual(values = c("#00AFBB", "#E7B800")) +
+  scale_fill_manual(values = c("#00AFBB", "#E7B800"))
+
+library(ggplot2)
+  codeathon.ABday4 %>% 
+  filter(Site.recode.ICD.O.3.WHO.2008 == "Thyroid"|Site.recode.ICD.O.3.WHO.2008 == "Breast"| Site.recode.ICD.O.3.WHO.2008 == "Melanoma of the Skin") %>%
+  filter(Survival.months.flag == 1) %>%
+  ggplot(aes(x = Survival.months)) +
+  geom_histogram(aes(color = Site.recode.ICD.O.3.WHO.2008, fill = Site.recode.ICD.O.3.WHO.2008),
+                 position = "identity", bins = 30, alpha = 0.4)
+  
