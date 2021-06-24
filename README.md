@@ -86,6 +86,8 @@ WHERE THE SEER DATA COMES FROM GEOGRAPHICALLY
 
 ![image](https://user-images.githubusercontent.com/22613114/123306953-e8075900-d4ef-11eb-9857-f2ab16a80959.png)
 
+![image](https://user-images.githubusercontent.com/22613114/123307131-23098c80-d4f0-11eb-82f4-d25f4bc05aa0.png)
+
 #### REFERENCES
 
 [1] American Cancer Society. Cancer Statistics Center. Cancer Facts & Figures 2020. 2020 Special Section: Cancer in Adolescents and Young Adults. http://cancerstatisticscenter.cancer.org. Accessed April 23, 2021.
