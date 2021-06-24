@@ -1,0 +1,220 @@
+---
+title: "AYA_Codeathon_Visualization_Day4_v0.2"
+author: "Faith Lee and Lesley Chapman"
+output: pdf_document
+---
+
+## DATA VISUALIZATION FUNCTIONS 
+```{r setup, include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(usmap)
+SEER_Cleaned <- read.csv("codeathon_RECODE_v03.csv")
+```
+
+
+## TOP 10 CANCERS 
+```{r}
+heatmap_data<- SEER_Cleaned %>% 
+  group_by(Year.of.diagnosis, Site.recode.ICD.O.3.WHO.2008) %>% 
+  summarize(cancer_count = n()) %>% arrange(Year.of.diagnosis, desc(cancer_count)) %>% 
+  group_by(Year.of.diagnosis) %>% slice(1:10) 
+
+ggplot(heatmap_data, aes(x=factor(Year.of.diagnosis), y=Site.recode.ICD.O.3.WHO.2008, fill= cancer_count)) + 
+  geom_tile() + 
+  xlab("Year of Diagnosis") + 
+  ylab("Type of Cancer") + 
+  ggtitle("Top 10 cancers of each year")
+```
+
+## BY AGE GROUP
+```{r}
+heatmap_data<- SEER_Cleaned %>% 
+  group_by(Year.of.diagnosis, Age.recode.with..1.year.olds) %>% 
+  summarize(cancer_count = n())
+
+ggplot(heatmap_data, aes(x=factor(Year.of.diagnosis), y=Age.recode.with..1.year.olds, fill= cancer_count)) + 
+  geom_tile(color="white") + 
+  xlab("Year of Diagnosis") + 
+  ylab("Age Group") + 
+  ggtitle("AYA Cancer Counts by Age Group") + 
+  scale_fill_gradient(low="pink", high="red")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+## BY RACE 
+```{r}
+heatmap_data<- SEER_Cleaned %>% 
+  group_by(Year.of.diagnosis, Race.and.origin.recode..NHW..NHB..NHAIAN..NHAPI..Hispanic.) %>% 
+  summarize(cancer_count = n()) 
+
+ggplot(heatmap_data, aes(x=factor(Year.of.diagnosis), y=Race.and.origin.recode..NHW..NHB..NHAIAN..NHAPI..Hispanic., fill= cancer_count)) + 
+  geom_tile() + 
+  xlab("Year of Diagnosis") + 
+  ylab("Race And Origin") + 
+  ggtitle("AYA Cancer Counts by Race and Origin") + 
+  scale_fill_gradient(low="chartreuse", high="chartreuse4")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+## IS there a relation between education level and cancer count? 
+## Distribution of Survival Months BY RACE 
+
+```{r}
+ggplot(SEER_Cleaned_updated, aes(x=Race.and.origin.recode..NHW..NHB..NHAIAN..NHAPI..Hispanic., y=Survival.months, fill=factor(Decade))) + 
+  geom_boxplot() + 
+  ggtitle("Survival Months by Race") + 
+  xlab("Race and Origin") +ylab("Survival Months") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+#### Survival Plots
+## Survival time between men and women .
+```{r}
+ggplot(SEER_Cleaned_updated, aes(x=Survival.months, color=Sex)) +
+  geom_histogram(fill="white", alpha=0.5, position="identity") + 
+  ylab("Frequency") + 
+  xlab("Survival Months") + 
+  ggtitle("Distribution of Survival months by Gender") + 
+  theme_bw()
+
+# map_data <- SEER_Cleaned_updated %>% group_by(State) %>% summarize(count=n())
+# names(map_data)[names(map_data) == 'State'] <- 'state'
+# plot_usmap(data = map_data, values="count", color="blue") + 
+#   labs(title = "U.S. States", subtitle = "Map of the United States") + 
+#   theme(panel.background=element_blank(), legend.position = "right") +
+#   scale_fill_continuous(low = "white", high = "red", name = "Cancer Counts \n 1997-2016 in 13 States")
+```
+
+```{r}
+er <-  SEER_Cleaned_updated %>% distinct(Survival.months.flag)
+er$Survival.months.flag
+```
+
+### Note: Survival.months.flag is currently coded as 1 not 'complete'
+**1997 to 2006**
+```{r}
+SEER_1997_2006 <- SEER_Cleaned_updated %>%
+  filter(Year.of.diagnosis >= 1997 | Year.of.diagnosis <= 2006) %>%
+  filter(Survival.months > 0)
+```
+
+```{r}
+ggplot(SEER_1997_2006, aes(x=Survival.months, color=Unemployed_cat)) +
+  geom_histogram(fill="white", alpha=0.5, position="identity") + 
+  ylab("Frequency") + 
+  xlab("Survival Months") + 
+  ggtitle("1997-2006: Distribution of Survival months by Employment Status") + 
+  theme_bw() +
+  guides(col=guide_legend("Employment_Status"))
+```
+```{r}
+ggplot(SEER_1997_2006, aes(x=Survival.months, color=Rural.Urban.Continuum.Code.2013)) +
+  geom_histogram(fill="white", alpha=0.5, position="identity") + 
+  ylab("Frequency") + 
+  xlab("Survival Months") + 
+  ggtitle("1997-2006: Distribution of Survival months by Region : Rural vs Urban") + 
+  theme_bw() +
+  guides(col=guide_legend("Rural_Urban"))
+```
+```{r}
+ggplot(SEER_1997_2006, aes(x=Survival.months, color=HighSchoolEdCat)) +
+  geom_histogram(fill="white", alpha=0.5, position="identity") + 
+  ylab("Frequency") + 
+  xlab("Survival Months") + 
+  ggtitle("1997-2006: Distribution of Survival months by High School Education") + 
+  theme_bw() +
+  guides(col=guide_legend("Education Stauts"))
+```
+
+**2007-2016**
+```{r}
+SEER_2007_2016 <- SEER_Cleaned_updated %>%
+  filter(Year.of.diagnosis >= 2007 | Year.of.diagnosis <= 2016) %>%
+  filter(Survival.months > 0)
+```
+
+```{r}
+ggplot(SEER_2007_2016, aes(x=Survival.months, color=Unemployed_cat)) +
+  geom_histogram(fill="white", alpha=0.5, position="identity") + 
+  ylab("Frequency") + 
+  xlab("Survival Months") + 
+  ggtitle("2007-2016: Distribution of Survival months by Employment Status") + 
+  theme_bw() +
+  guides(col=guide_legend("Employment_Status"))
+```
+```{r}
+ggplot(SEER_2007_2016, aes(x=Survival.months, color=Rural.Urban.Continuum.Code.2013)) +
+  geom_histogram(fill="white", alpha=0.5, position="identity") + 
+  ylab("Frequency") + 
+  xlab("Survival Months") + 
+  ggtitle("2007-2016: Distribution of Survival months by Region : Rural vs Urban") + 
+  theme_bw() +
+  guides(col=guide_legend("Rural_Urban"))
+```
+```{r}
+ggplot(SEER_2007_2016, aes(x=Survival.months, color=HighSchoolEdCat)) +
+  geom_histogram(fill="white", alpha=0.5, position="identity") + 
+  ylab("Frequency") + 
+  xlab("Survival Months") + 
+  ggtitle("2007-2016: Distribution of Survival months by High School Education") + 
+  theme_bw() +
+  guides(col=guide_legend("Education Stauts"))
+```
+
+## MOST COMMON CANCERS TO MEN 
+## MOST COMMON CANCERS TO WOMEN 
+## CANCER COUNTS by unemployedment year over year 
+```{r}
+lineplot <- SEER_Cleaned_updated%>% group_by(Year.of.diagnosis, Sex) %>% summarize(count=n())
+ggplot(data=lineplot, aes(x=Year.of.diagnosis, y=count, group=Sex)) +
+  geom_line(aes(linetype=Sex))+ theme_bw() +
+  geom_point(aes(shape=Sex))+ ggtitle("AYA Counts by Gender") + 
+  ylab("Count") + 
+  xlab("Year")
+
+ggplot(SEER_Cleaned_updated, aes(x=Chemotherapy.recode..yes..no.unk., y=Survival.months, fill=factor(Decade))) + 
+  geom_boxplot() + 
+  ggtitle("Survival Months by Chemotherapy") + 
+  xlab("Chemotherapy (Yes, No| Unknown)") +
+  ylab("Survival Months") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+```
+
+
+## REMOVAL OF 31307 rows 
+```{r}
+ggplot(SEER_Cleaned_updated, aes(x=factor(median_income_household_group), y=Survival.months, fill=factor(Decade))) + 
+  geom_boxplot() + 
+  ggtitle("Survival Months by Median Income Household Group") + 
+  xlab("Median Income Group") +ylab("Survival Months") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+ggplot(SEER_Cleaned_updated, aes(x=factor(Unemployed_cat), y=Survival.months, fill=factor(Decade))) + 
+  geom_boxplot() + 
+  ggtitle("Survival Months by Unemployment in County") + 
+  xlab("Unemployment Level In County") +ylab("Survival Months") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+
+## POVERTY, SURVIVAL AND COUNTS 
+```{r}
+SEER_Cleaned_updated$family_poverty<- as.double(SEER_Cleaned_updated$X..Families.below.poverty.ACS.2013.2017)/100
+tt<-SEER_Cleaned_updated  %>% 
+  group_by(family_poverty, Race.and.origin.recode..NHW..NHB..NHAIAN..NHAPI..Hispanic.)%>% 
+  summarize(count=n(), median_survival_months = median(Survival.months, na.rm=TRUE))
+
+tt$family_poverty_grouped<- cut(tt$family_poverty, breaks = c(0,10,20,30,40,50,100))
+tt_count <- tt%>% filter(count>100)
+
+ggplot(tt_count, aes(x=family_poverty,median_survival_months)) + 
+  geom_point(aes(size = count, color=Race.and.origin.recode..NHW..NHB..NHAIAN..NHAPI..Hispanic.)) + 
+  ggtitle("Counts by Median Survival Months and Family Poverty (>200) w Racial component") + 
+  ylab("Median Survival") + xlab("Family Poverty (%) at County Level") + 
+  theme_bw()
+```
+
+## TOP 10 Cancer 
+```{r}
+SEER_Cleaned_updated %>% 
+  filter(Survival.months.flag==1) %>% 
+  summarize(median(Survival.months, na.rm=TRUE))
+```
