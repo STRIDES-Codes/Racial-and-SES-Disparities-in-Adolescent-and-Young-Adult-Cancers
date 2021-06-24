@@ -84,6 +84,8 @@ Top 10 cancer counts by decades:
 WHERE THE SEER DATA COMES FROM GEOGRAPHICALLY
 ![Cancer_Counts_by_State_Level](https://user-images.githubusercontent.com/22613114/123296340-8e4d6180-d4e4-11eb-8923-fce27f2343d2.png)
 
+![image](https://user-images.githubusercontent.com/22613114/123306953-e8075900-d4ef-11eb-9857-f2ab16a80959.png)
+
 #### REFERENCES
 
 [1] American Cancer Society. Cancer Statistics Center. Cancer Facts & Figures 2020. 2020 Special Section: Cancer in Adolescents and Young Adults. http://cancerstatisticscenter.cancer.org. Accessed April 23, 2021.
