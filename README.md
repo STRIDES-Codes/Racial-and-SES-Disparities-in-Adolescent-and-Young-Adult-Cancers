@@ -47,7 +47,13 @@ Our data will come from SEER Incidence Data, between the years of 1997 - 2016.
 
 ####  VARIABLES
 
-From the SEER Data bet
+From the SEER Data basically we will be looking at the following variables: 
+
+- Unemployment percentages in the County of individual 
+- Race and Origin 
+- Survival Months 
+- Family Poverty percentages in the County of Individual 
+- Median survival months 
 
 ### RESULTS 
 
