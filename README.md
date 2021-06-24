@@ -63,6 +63,7 @@ Our data will come from SEER Incidence Data, 1975-2018; US Mortality Data NCHS, 
 
 
 | Acute Lymphocytic Leukemia | 8,024  | 4.35% | 10,457  | 4.43%  | 18,481 |
+
 | Brain                      | 10,911 | 5.91% | 13,178  | 5.59%  | 24,089 |
 | Breast                     | 24,877 | 13.48% | 29,362 | 12.45% | 54,239 |
 | Cervix | 8,543 | 4.63% | 8,836 | 3.75% | 17,379 |
